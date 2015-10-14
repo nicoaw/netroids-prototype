@@ -2,7 +2,7 @@
 
 #include "Player.h"
 
-#include <enet\enet.h>
+#include <enet/enet.h>
 
 #include <deque>
 

@@ -3,7 +3,7 @@
 #include "Ship.h"
 #include "AABB.h"
 
-#include <enet\enet.h>
+#include <enet/enet.h>
 
 #include <cstdint>
 

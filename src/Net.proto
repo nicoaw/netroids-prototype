@@ -1,0 +1,63 @@
+package net;
+
+enum PacketType
+{
+	SPAWN = 1;
+	INPUT = 2;
+	SYNC = 3;
+}
+
+message Input
+{
+	required bool forward = 1;
+	required bool left = 2;
+	required bool right = 3;
+}
+
+message State
+{
+	required float position_x = 1;
+	required float position_y = 2;
+	required float angle = 3;
+	required float velocity_x = 7;
+	required float velocity_y = 8;
+	required float angular_velocity = 9;
+	required float scale = 10;
+	required float mass = 11;
+	required float inertia_tensor = 12;
+}
+
+message Move
+{
+	required uint32 time = 1;
+	required Input input = 2;
+	required State state = 3;
+}
+
+message PacketBase
+{
+	required PacketType type = 1;
+	required bytes data = 2;
+}
+
+message PacketSpawn
+{
+	required uint32 id = 1;
+	required uint32 time = 2;
+	required State state = 3;
+}
+
+message PacketInput
+{
+	required uint32 time = 1;
+	required Input input = 2;
+	repeated Move important_moves = 3;
+}
+
+message PacketSync
+{
+	required uint32 id = 1;
+	required uint32 time = 2;
+	required State state = 3;
+	required Input input = 4;
+}

@@ -1,9 +1,9 @@
 #include "GameEngine.h"
 
-#include <enet\enet.h>
+#include <enet/enet.h>
 
-#include <GL\glew.h>
-#include <GL\GL.h>
+#include <GL/glew.h>
+#include <GL/gl.h>
 
 std::shared_ptr<GameState> GameEngine::currentState = nullptr;
 float GameEngine::fixedTimestep;

@@ -3,7 +3,7 @@
 #include "Ship.h"
 #include "Net.pb.h"
 
-#include <enet\enet.h>
+#include <enet/enet.h>
 
 #include <vector>
 
